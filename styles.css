@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: #181818;
+  color: azure;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.container {
+  display: flex;
+  max-width: 600px;
+  height: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+}
+
+.cards {
+  flex: 0 1 160px;
+  height: 200px;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #0B71E9, #0DE899); 
+  box-shadow: 0 0 45px #ccc;
+}
+
+.cards > h1 {
+  font-size: 20px;
+  text-align: center; 
+  width: 100%;
+  padding: 5px 0;
+  position: relative;  
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px 10px 0 0;  
+  font-weight: 300;
+}
+
+.cards:hover {
+  transform: scale(1.2);
+}
+
+.cards > p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.cards p span {
+  display: block;
+  font-size: 28px;  
+}
+
+.line {
+  height: 3px;
+  background: #ffffff;
+  margin: 0 auto 7px auto;
+}
+
+.stats {
+  width: 100%;
+  padding: 10px 25px;
+  color: #000;
+}
+
+.benefit {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 10px 0;  
+  font-size: 12px;
+}
+
+.benefit span { 
+  padding: 0 5px;
+}
+
+.bar {
+  width: 100%;
+  height: 12px;
+  background-color: #d5dadf;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 1px 5px #797979;
+}
+
+.bar::after {
+  content: '';
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, #0B71E9, #0DE899);
+  border-radius: 5px;
+  transition: all ease-in-out 0.2s;
+}
+
+.basic:hover ~ .stats .users .bar:after {
+  width: 10%;
+}
+.basic:hover ~ .stats .storage .bar:after {
+  width: 20%;
+}
+.basic:hover ~ .stats .projects .bar::after {
+  width: 15%;
+}
+
+.pro:hover ~ .stats .users .bar:after {
+  width: 45%;
+}
+.pro:hover ~ .stats .storage .bar:after {
+  width: 60%;
+}
+.pro:hover ~ .stats .projects .bar::after {
+  width: 50%;
+}
+
+.premium:hover ~ .stats .users .bar:after {
+  width: 100%;
+}
+.premium:hover ~ .stats .storage .bar:after {
+  width: 100%;
+}
+.premium:hover ~ .stats .projects .bar::after {
+  width: 100%;
+}
